@@ -11,7 +11,7 @@ import undetected_chromedriver as uc
 
 from config import verificationImg, dataFolder
 
-VERSION_MAIN = sys.argv[1:][0]  # make version_main and sleeptime passable by sys.argv
+VERSION_MAIN = int(sys.argv[1:][0])  # make version_main and sleeptime passable by sys.argv
 url = sys.argv[1:][1]
 sleepTime = 6
 #  "https://www.zara.com/de/de/jacke-aus-kunstleder-p08281450.html?v1=222756772"
