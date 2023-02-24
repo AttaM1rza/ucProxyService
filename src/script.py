@@ -3,6 +3,8 @@ import logging
 import os
 import subprocess
 import time
+from datetime import datetime
+
 start_time = time.time()
 
 import undetected_chromedriver as uc
@@ -13,6 +15,17 @@ sleepTime = 6
 url = "https://nowsecure.nl/#relax"
 url = "https://www.zara.com/de/de/jacke-aus-kunstleder-p08281450.html?v1=222756772"
 VERSION_MAIN = 110
+
+
+def saveHtmlFile(destinationDir: str, htmlResponse):
+    filename = datetime.now().strftime('%d-%m-%Y_%H-%M-%S')
+    savePath = os.path.join(destinationDir, filename)
+    with open(savePath, "w", encoding="utf-8") as file:
+        try:
+            file.write(htmlResponse.text)
+        except AttributeError:
+            file.write(htmlResponse)
+
 
 logging.basicConfig(level=10)
 logging.getLogger("parso").setLevel(100)
@@ -27,8 +40,9 @@ driver.save_screenshot(verificationImg)
 subprocess.run(["catimg", verificationImg])
 logging.getLogger().info(f'screenshot saved to {verificationImg}')
 sourcePage = driver.page_source
+saveHtmlFile(dataFolder, sourcePage)
 logging.getLogger().info(f'source page saved to {dataFolder}')
 # input("press a key to quit")
+
 exit()
 logging.getLogger().info("--- %s seconds ---" % (time.time() - start_time))
-
