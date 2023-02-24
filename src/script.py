@@ -7,7 +7,7 @@ from datetime import datetime
 
 import undetected_chromedriver as uc
 
-from src.config import dataFolder, verificationImg, sourcePage
+from config import dataFolder, verificationImg, sourcePage
 
 sleepTime = 5
 url = "https://nowsecure.nl/#relax"
