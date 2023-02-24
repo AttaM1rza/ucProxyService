@@ -3,7 +3,7 @@ import logging
 import os
 import subprocess
 import time
-from datetime import datetime
+start_time = time.time()
 
 import undetected_chromedriver as uc
 
@@ -30,3 +30,5 @@ sourcePage = driver.page_source
 logging.getLogger().info(f'source page saved to {dataFolder}')
 # input("press a key to quit")
 exit()
+logging.getLogger().info("--- %s seconds ---" % (time.time() - start_time))
+
