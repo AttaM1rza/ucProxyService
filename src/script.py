@@ -12,7 +12,7 @@ import undetected_chromedriver as uc
 from config import verificationImg, dataFolder
 
 sleepTime = 6
-url = sys.argv[1:]  # "https://www.zara.com/de/de/jacke-aus-kunstleder-p08281450.html?v1=222756772"
+url = str(sys.argv[1:])  # "https://www.zara.com/de/de/jacke-aus-kunstleder-p08281450.html?v1=222756772"
 VERSION_MAIN = 110
 
 
