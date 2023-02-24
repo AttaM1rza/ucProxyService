@@ -16,7 +16,7 @@ VERSION_MAIN = 110
 
 
 def saveHtmlFile(destinationDir: str, htmlResponse):
-    filename = datetime.now().strftime('%d-%m-%Y_%H-%M-%S')
+    filename = datetime.now().strftime('%d-%m-%Y_%H-%M-%S') + ".html"
     savePath = os.path.join(destinationDir, filename)
 
     with open(savePath, "w", encoding="utf-8") as file:
@@ -38,7 +38,7 @@ driver.get(url)
 logging.getLogger().info(f'sleeping {sleepTime} seconds to give site a chance to load')
 time.sleep(sleepTime)  # this is only for the timing of the screenshot
 logging.getLogger().setLevel(20)
-driver.save_screenshot("/data/nowsecure.png")
+driver.save_screenshot(verificationImg)
 subprocess.run(["catimg", verificationImg])
 logging.getLogger().info(f'screenshot saved to {verificationImg}')
 saveHtmlFile(dataFolder, driver.page_source)
