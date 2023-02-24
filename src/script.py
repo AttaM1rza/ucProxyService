@@ -12,8 +12,9 @@ import undetected_chromedriver as uc
 from config import verificationImg, dataFolder
 
 sleepTime = 6
-
-VERSION_MAIN = 110
+url = sys.argv[1:][0]
+VERSION_MAIN = 110  # make version_main and sleeptime passable by sys.argv
+#  "https://www.zara.com/de/de/jacke-aus-kunstleder-p08281450.html?v1=222756772"
 
 
 def saveHtmlFile(destinationDir: str, htmlResponse):
@@ -32,11 +33,6 @@ logging.getLogger("parso").setLevel(100)
 # o = uc.ChromeOptions()
 # o.arguments.extend(["--no-sandbox", "--disable-setuid-sandbox"])  # these are needed to run chrome as root
 driver = uc.Chrome(advanced_elements=True, version_main=VERSION_MAIN)
-
-url = f"{sys.argv[1:][0]}"
-logging.info(url)  # "https://www.zara.com/de/de/jacke-aus-kunstleder-p08281450.html?v1=222756772"
-logging.info(type(url))
-
 driver.get(url)
 logging.getLogger().info(f'sleeping {sleepTime} seconds to give site a chance to load')
 time.sleep(sleepTime)  # this is only for the timing of the screenshot
