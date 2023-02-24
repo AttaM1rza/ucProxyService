@@ -9,3 +9,7 @@ docker build -t uc_docker_image .
 ``` 
 docker run --rm -it -v $PWD/data:/data uc_docker_image
 ```
+
+### todo
+
+- improve Dockerfile
