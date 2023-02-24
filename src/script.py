@@ -58,3 +58,7 @@ class UCProxyBrowser:
             except AttributeError:
                 # AttributeError: 'str' object has no attribute 'text'
                 file.write(htmlResponse)
+
+
+if "__name__" == "__main__":
+    UCProxyBrowser()
