@@ -18,7 +18,7 @@ VERSION_MAIN = 110
 
 
 def saveHtmlFile(destinationDir: str, htmlResponse):
-    filename = datetime.now().strftime('%d-%m-%Y_%H-%M-%S')
+    filename = datetime.now().strftime('%d-%m-%Y_%H-%M-%S') + ".html"
     savePath = os.path.join(destinationDir, filename)
     with open(savePath, "w", encoding="utf-8") as file:
         try:
