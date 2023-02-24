@@ -15,6 +15,7 @@ sleepTime = 6
 url = f"{sys.argv[1:]}"
 logging.info(url)  # "https://www.zara.com/de/de/jacke-aus-kunstleder-p08281450.html?v1=222756772"
 logging.info(type(url))
+url = "https://www.zara.com/de/de/jacke-aus-kunstleder-p08281450.html?v1=222756772"
 VERSION_MAIN = 110
 
 
