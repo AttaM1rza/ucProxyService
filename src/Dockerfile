@@ -30,7 +30,7 @@ RUN /bin/sh -c DEBIAN_FRONTEND=noninteractive apt-get install -y xrdp
 RUN /bin/sh -c export DEBIAN_FRONTEND=noninteractive && pip install -U git+https://github.com/ultrafunkamsterdam/undetected-chromedriver@3.2.0  ipython
 COPY assets/entrypoint.sh /
 COPY assets/xrdp.ini /etc/xrdp/xrdp.ini
-# COPY script.py /
+COPY script.py /
 COPY . .
 
 # RUN /bin/sh -c set -eux;    sed -i "s@version_main=None@version_main=108@g" /usr/local/lib/python3.11/site-packages/undetected_chromedriver/__init__.py
