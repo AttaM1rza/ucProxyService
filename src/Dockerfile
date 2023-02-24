@@ -37,4 +37,4 @@ COPY . .
 
 RUN chmod +x entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
-CMD ["python3", "script.py"]
+CMD ["python3", "script.py", "https://nowsecure.nl/#relax"]

@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import logging
-import os
+import os, sys
 import subprocess
 import time
 from datetime import datetime
@@ -12,8 +12,7 @@ import undetected_chromedriver as uc
 from config import verificationImg, dataFolder
 
 sleepTime = 6
-url = "https://nowsecure.nl/#relax"
-url = "https://www.zara.com/de/de/jacke-aus-kunstleder-p08281450.html?v1=222756772"
+url = sys.argv[1:]  # "https://www.zara.com/de/de/jacke-aus-kunstleder-p08281450.html?v1=222756772"
 VERSION_MAIN = 110
 
 
@@ -46,4 +45,4 @@ logging.getLogger().info(f'source page saved to {dataFolder}')
 # input("press a key to quit")
 
 exit()
-logging.getLogger().info("--- %s seconds ---" % (time.time() - start_time))
+logging.getLogger().info("----- %s seconds -----" % (time.time() - start_time))
