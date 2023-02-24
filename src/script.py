@@ -14,6 +14,7 @@ from config import verificationImg, dataFolder
 sleepTime = 6
 url = f"{sys.argv[1:]}"
 logging.info(url)  # "https://www.zara.com/de/de/jacke-aus-kunstleder-p08281450.html?v1=222756772"
+logging.info(type(url))
 VERSION_MAIN = 110
 
 
