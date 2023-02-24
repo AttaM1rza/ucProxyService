@@ -33,8 +33,7 @@ logging.getLogger("parso").setLevel(100)
 # o.arguments.extend(["--no-sandbox", "--disable-setuid-sandbox"])  # these are needed to run chrome as root
 driver = uc.Chrome(advanced_elements=True, version_main=VERSION_MAIN)
 
-url = f"{sys.argv[1:]}"
-logging.info("hallo")  # "https://www.zara.com/de/de/jacke-aus-kunstleder-p08281450.html?v1=222756772"
+url = f"{sys.argv[1:][0]}"
 logging.info(url)  # "https://www.zara.com/de/de/jacke-aus-kunstleder-p08281450.html?v1=222756772"
 logging.info(type(url))
 url = "https://nowsecure.nl/#relax"  # "https://www.zara.com/de/de/jacke-aus-kunstleder-p08281450.html?v1=222756772"
