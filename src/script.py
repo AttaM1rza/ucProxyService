@@ -19,6 +19,7 @@ logging.getLogger("parso").setLevel(100)
 # o = uc.ChromeOptions()
 # o.arguments.extend(["--no-sandbox", "--disable-setuid-sandbox"])  # these are needed to run chrome as root
 driver = uc.Chrome(advanced_elements=True, version_main=VERSION_MAIN)
+time.sleep(100)
 driver.get(url)
 logging.getLogger().info(f'sleeping {sleepTime} seconds to give site a chance to load')
 time.sleep(sleepTime)  # this is only for the timing of the screenshot
