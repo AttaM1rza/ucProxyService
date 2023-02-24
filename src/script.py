@@ -7,13 +7,12 @@ from datetime import datetime
 
 import undetected_chromedriver as uc
 
-from config import dataFolder, verificationImg, sourcePage
+from config import verificationImg, dataFolder
 
 sleepTime = 5
 url = "https://nowsecure.nl/#relax"
 url = "https://www.zara.com/de/de/jacke-aus-kunstleder-p08281450.html?v1=222756772"
 VERSION_MAIN = 110
-WORKING_DIR = os.path.join()
 
 
 def saveHtmlFile(destinationDir: str, htmlResponse):
@@ -42,7 +41,7 @@ logging.getLogger().setLevel(20)
 driver.save_screenshot("/data/nowsecure.png")
 subprocess.run(["catimg", verificationImg])
 logging.getLogger().info(f'screenshot saved to {verificationImg}')
-saveHtmlFile(sourcePage, driver.page_source)
-logging.getLogger().info(f'source page saved to {sourcePage}')
+saveHtmlFile(dataFolder, driver.page_source)
+logging.getLogger().info(f'source page saved to {dataFolder}')
 # input("press a key to quit")
 exit()
