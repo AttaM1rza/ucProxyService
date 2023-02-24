@@ -29,7 +29,7 @@ def saveHtmlFile(destinationDir: str, htmlResponse):
 
 logging.basicConfig(level=10)
 logging.getLogger("parso").setLevel(100)
-logging.info(f"{sys.argv[1:]}")
+logging.info(f"{type(sys.argv[1:])}")
 # o = uc.ChromeOptions()
 # o.arguments.extend(["--no-sandbox", "--disable-setuid-sandbox"])  # these are needed to run chrome as root
 driver = uc.Chrome(advanced_elements=True, version_main=VERSION_MAIN)
